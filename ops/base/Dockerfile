@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Peter McConnell <peter.mcconnell@rehabstudio.com>
+MAINTAINER Austin Turner <paustint@gmail.com>
 
 # keep upstart quiet
 RUN dpkg-divert --local --rename --add /sbin/initctl
@@ -24,9 +24,9 @@ RUN service supervisor stop
 RUN apt-get build-dep -y python-imaging python-psycopg2
 
 # create a virtual environment and install all depsendecies from pypi
-RUN virtualenv /opt/venv
-ADD ./requirements.txt /opt/venv/requirements.txt
-RUN /opt/venv/bin/pip install -r /opt/venv/requirements.txt
+RUN virtualenv /webapp/venv
+ADD ./requirements.txt /webapp/venv/requirements.txt
+RUN /webapp/venv/bin/pip install -r /webapp/venv/requirements.txt
 
 # expose port(s)
 EXPOSE 80
