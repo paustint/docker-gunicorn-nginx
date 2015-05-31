@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
-MAINTAINER Austin Turner <paustint@gmail.com>
+MAINTAINER Peter McConnell <peter.mcconnell@rehabstudio.com>
+# Fork modified
+# MAINTAINER Austin Turner <paustint@gmail.com>
 
 # keep upstart quiet
 RUN dpkg-divert --local --rename --add /sbin/initctl
